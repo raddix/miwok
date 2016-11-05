@@ -16,7 +16,6 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        System.out.print("This is fucked up");
 
         ArrayList<String> listOfWords = new ArrayList<String>();
         listOfWords.add("One");
