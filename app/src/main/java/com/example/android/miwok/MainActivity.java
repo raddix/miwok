@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
         TextView familyMembersTextView = (TextView) findViewById(R.id.family);
         TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
 
-        try {
-
+            assert numbersTextView != null;
             numbersTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            assert colorsTextView != null;
             colorsTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            assert familyMembersTextView != null;
             familyMembersTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            assert phrasesTextView != null;
             phrasesTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,10 +73,5 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
     }
 }
