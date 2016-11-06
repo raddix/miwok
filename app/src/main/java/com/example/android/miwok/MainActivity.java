@@ -34,13 +34,47 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView numbersTextView = (TextView) findViewById(R.id.numbers);
+        TextView colorsTextView = (TextView) findViewById(R.id.colors);
+        TextView familyMembersTextView = (TextView) findViewById(R.id.family);
+        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
 
-        numbersTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(intent);
-            }
-        });
+        try {
+
+            numbersTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            colorsTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            familyMembersTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, FamilyMembersActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            phrasesTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
