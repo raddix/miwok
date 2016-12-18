@@ -2,10 +2,13 @@ package com.example.android.miwok;
 
 import android.content.Context;
 import android.provider.UserDictionary;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,8 +17,11 @@ import java.util.ArrayList;
  * Created by Abc1 on 11/5/2016.
  */
 public class WordAdapter extends ArrayAdapter<Word> {
-    public WordAdapter(Context context, ArrayList<Word> listOfWords) {
+
+    private int colorCode;
+    public WordAdapter(Context context, ArrayList<Word> listOfWords, int colorCode) {
         super(context, 0, listOfWords);
+        this.colorCode = colorCode;
     }
 
     @Override
@@ -42,6 +48,23 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
             // Return the whole list item layout (containing 2 TextViews and an ImageView)
             // so that it can be shown in the ListView
+            ImageView imageView = (ImageView) listItemView.findViewById(R.id.imageView);
+
+            View textContainerView = listItemView.findViewById(R.id.textContainerLinearLayout);
+            int color = ContextCompat.getColor(getContext(),colorCode);
+            textContainerView.setBackgroundColor(color);
+
+            if(currentWordItem.getmImageResourceId()==0)
+            {
+                imageView.setVisibility(View.GONE);
+            }
+            else
+            {
+                imageView.setImageResource(currentWordItem.getmImageResourceId());
+            }
+
+
+
             return listItemView;
 
     }

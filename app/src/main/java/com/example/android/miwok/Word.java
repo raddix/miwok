@@ -7,6 +7,7 @@ public class Word {
 
     private String mEnglishWord;
     private String mMiwokTranslation;
+    private int mImageResourceId;
 
     public String getmEnglishWord() {
         return mEnglishWord;
@@ -21,11 +22,25 @@ public class Word {
         this.mMiwokTranslation = mMiwokTranslation;
     }
 
+    public Word(String mEnglishWord, String mMiwokTranslation,int mImageResourceId) {
+        this.mEnglishWord = mEnglishWord;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mImageResourceId = mImageResourceId;
+    }
+
     public String getmMiwokTranslation() {
         return mMiwokTranslation;
     }
 
     public void setmMiwokTranslation(String mMiwokTranslation) {
         this.mMiwokTranslation = mMiwokTranslation;
+    }
+
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
+
+    public void setmImageResourceId(int mImageResourceId) {
+        this.mImageResourceId = mImageResourceId;
     }
 }
